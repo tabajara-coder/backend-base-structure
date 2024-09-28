@@ -1,0 +1,26 @@
+
+services: 
+  
+  postgres:
+    image: 'bitnami/postgresql:latest'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: base-db
+    volumes:
+      - base_db_data:/bitnami/postgresql
+
+  redis:
+      image: 'bitnami/redis:latest'
+      ports:
+        - "6379:6379"
+      environment:
+        REDIS_PASSWORD: dev
+      volumes:
+        - base_redis_data:/bitnami/redis/data
+
+volumes:
+  base_db_data:
+  base_redis_data:

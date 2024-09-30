@@ -28,13 +28,13 @@ func main() {
 
 	verifyProjectFilesHasReplaceID(projectName, replaceIDInProjectFiles)
 
-	_, err := os.Stat(projectName)
-	if !os.IsNotExist(err) {
-		fmt.Println("-- deleting projectName folder cause its already present")
-		if err := os.RemoveAll(projectName); err != nil {
-			log.Fatal(err)
-		}
-	}
+	// _, err := os.Stat(projectName)
+	// if !os.IsNotExist(err) {
+	// 	fmt.Println("-- deleting projectName folder cause its already present")
+	// 	if err := os.RemoveAll(projectName); err != nil {
+	// 		log.Fatal(err)
+	// 	}
+	// }
 }
 
 // package main

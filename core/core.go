@@ -46,3 +46,7 @@ func Getenv(name string, def string) string {
 	}
 	return env
 }
+
+type AuthenticationConfig struct {
+	AuthFunc func(*Core) (Auth, error)
+}

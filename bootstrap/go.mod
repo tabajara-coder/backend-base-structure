@@ -2,6 +2,10 @@ module COREMOD
 
 go 1.23.1
 
+replace github.com/tabajara-coder/backend-base-structure => ../
+
+require github.com/lib/pq v1.10.9
+
 require (
 	github.com/go-chi/chi/v5 v5.1.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
@@ -11,7 +15,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
-	github.com/lib/pq v1.10.9
+	github.com/tabajara-coder/backend-base-structure v0.0.0-20241001034707-e2ea6a9ac521 // indirect
 	golang.org/x/crypto v0.17.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/text v0.14.0 // indirect

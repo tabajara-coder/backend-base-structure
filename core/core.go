@@ -23,6 +23,10 @@ func JSON(w http.ResponseWriter, status int, v any) error {
 	return json.NewEncoder(w).Encode(v)
 }
 
+func (core *Core) JSON(status int, v any) error {
+	return JSON(core.Response, status, v)
+}
+
 func Handler(h HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		core := &Core{
@@ -49,4 +53,24 @@ func Getenv(name string, def string) string {
 
 type AuthenticationConfig struct {
 	AuthFunc func(*Core) (Auth, error)
+}
+
+func WithAuthentication(config AuthenticationConfig) func(http.Handler) http.Handler {
+	return func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			kit := &Core{
+				Response: w,
+				Request:  r,
+			}
+			auth, err := config.AuthFunc(kit)
+			if err != nil {
+				JSON(w, http.StatusInternalServerError, err.Error())
+				return
+			}
+			if !auth.Check() {
+				JSON(w, http.StatusForbidden, nil)
+			}
+			next.ServeHTTP(w, r)
+		})
+	}
 }

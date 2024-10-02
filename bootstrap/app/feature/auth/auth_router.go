@@ -1,15 +1,13 @@
-package router
+package auth
 
 import (
-	"COREMOD/app/handler"
-
 	"github.com/go-chi/chi/v5"
 	"github.com/tabajara-coder/backend-base-structure/core"
 )
 
 func InitializeAuthRouter(router chi.Router) {
 	authConfig := core.AuthenticationConfig{
-		AuthFunc: handler.VerifyUserSession,
+		AuthFunc: VerifyUserSession,
 	}
 
 	router.Use(core.WithAuthentication(authConfig))

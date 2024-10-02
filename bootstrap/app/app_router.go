@@ -1,7 +1,7 @@
-package router
+package app
 
 import (
-	"COREMOD/app/handler"
+	"COREMOD/app/feature/auth"
 
 	"github.com/go-chi/chi/v5"
 	chimiddleware "github.com/go-chi/chi/v5/middleware"
@@ -15,7 +15,7 @@ func InitializeMiddleware(router *chi.Mux) {
 
 func InitializeRoutes(router *chi.Mux) {
 
-	InitializeAuthRouter(router)
+	auth.InitializeAuthRouter(router)
 
-	router.Get("/", core.Handler(handler.HandleSign))
+	router.Get("/", core.Handler(HandleSign))
 }

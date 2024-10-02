@@ -1,7 +1,7 @@
 package main
 
 import (
-	"COREMOD/app/router"
+	"COREMOD/app"
 	"net/http"
 
 	"github.com/tabajara-coder/backend-base-structure/core"
@@ -12,8 +12,8 @@ import (
 func main() {
 	chiRouter := chi.NewMux()
 
-	router.InitializeMiddleware(chiRouter)
-	router.InitializeRoutes(chiRouter)
+	app.InitializeMiddleware(chiRouter)
+	app.InitializeRoutes(chiRouter)
 
 	listenAddr := core.Getenv("HTTP_LISTEN_ADDR", ":8080")
 

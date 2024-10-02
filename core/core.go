@@ -2,8 +2,11 @@ package core
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 type Core struct {
@@ -72,5 +75,10 @@ func WithAuthentication(config AuthenticationConfig) func(http.Handler) http.Han
 			}
 			next.ServeHTTP(w, r)
 		})
+	}
+}
+func Setup() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
 	}
 }

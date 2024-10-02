@@ -6,6 +6,8 @@ replace github.com/tabajara-coder/backend-base-structure => ../
 
 require github.com/lib/pq v1.10.9
 
+require github.com/mattn/go-sqlite3 v1.14.22 // indirect
+
 require (
 	github.com/go-chi/chi/v5 v5.1.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
@@ -20,5 +22,6 @@ require (
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	gorm.io/driver/postgres v1.5.9 // indirect
+	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.10 // indirect
 )

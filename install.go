@@ -28,6 +28,9 @@ func main() {
 
 	verifyProjectFilesHasReplaceID(projectName, replaceIDInProjectFiles)
 
+	renameEnv(projectName)
+
+	fmt.Printf("-- project (%s) successfully installed!\n", projectName)
 	// _, err := os.Stat(projectName)
 	// if !os.IsNotExist(err) {
 	// 	fmt.Println("-- deleting projectName folder cause its already present")
@@ -48,6 +51,17 @@ func main() {
 // 		return
 // 	}
 // 	fmt.Println("Conectou com sucesso!")
+
+func renameEnv(projectName string) {
+	fmt.Println("-- renaming .env.local -> .env")
+	if err := os.Rename(
+		path.Join(projectName, ".env.local"),
+		path.Join(projectName, ".env"),
+	); err != nil {
+		log.Fatal(err)
+	}
+
+}
 
 func verifyProjectFilesHasReplaceID(projectName string, replaceFunction func(string, string, string) error) {
 	err := filepath.Walk(path.Join(projectName), func(fullPath string, info fs.FileInfo, err error) error {

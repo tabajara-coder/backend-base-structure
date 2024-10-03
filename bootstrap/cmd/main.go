@@ -2,12 +2,9 @@ package main
 
 import (
 	"COREMOD/app"
-	"log"
-	"net/http"
-	"os"
+	"COREMOD/service/env"
 
-	"github.com/joho/godotenv"
-	"github.com/tabajara-coder/backend-base-structure/core"
+	"net/http"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -15,17 +12,13 @@ import (
 func main() {
 	chiRouter := chi.NewMux()
 
-	core.Setup()
-
 	app.InitializeMiddleware(chiRouter)
 	app.InitializeRoutes(chiRouter)
 
-	listenAddr := os.Getenv("HTTP_LISTEN_ADDR")
+	listenAddr := env.Get("HTTP_LISTEN_ADDR", ":8080")
 
 	http.ListenAndServe(listenAddr, chiRouter)
 }
 func init() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
-	}
+	env.Setup()
 }

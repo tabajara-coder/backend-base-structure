@@ -45,11 +45,11 @@ type AuthenticationConfig struct {
 func WithAuthentication(config AuthenticationConfig) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			kit := &Core{
+			core := &Core{
 				Response: w,
 				Request:  r,
 			}
-			auth, err := config.AuthFunc(kit)
+			auth, err := config.AuthFunc(core)
 			if err != nil {
 				JSON(w, http.StatusInternalServerError, err.Error())
 				return

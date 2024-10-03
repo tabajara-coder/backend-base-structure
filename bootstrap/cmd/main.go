@@ -19,6 +19,7 @@ func main() {
 
 	http.ListenAndServe(listenAddr, chiRouter)
 }
+
 func init() {
 	env.Setup()
 }

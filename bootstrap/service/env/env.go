@@ -31,7 +31,7 @@ func (env *envService) get(name string, def string) string {
 }
 
 func (env *envService) setup() {
-	if err := godotenv.Load("bootstrap/.env"); err != nil {
+	if err := godotenv.Load(); err != nil {
 		log.Fatal(err)
 	}
 }

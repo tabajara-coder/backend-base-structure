@@ -5,7 +5,7 @@ endif
 
 
 ifeq ($(OS),Windows_NT)
-	MAIN_PATH = /tmp/bin/main.exe
+	MAIN_PATH = tmp\bin\main.exe
 else
 	MAIN_PATH = tmp/bin/main
 endif

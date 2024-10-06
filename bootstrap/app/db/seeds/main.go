@@ -1,1 +1,5 @@
 package seeds
+
+func main() {
+
+}

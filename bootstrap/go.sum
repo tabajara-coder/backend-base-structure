@@ -1,3 +1,5 @@
+github.com/anthdm/superkit v0.0.0-20240701091803-e7f8e0aad3e9 h1:FADkTbLvX3pYV8RahQKHD0jqafpWNraQuscP2sipDYU=
+github.com/anthdm/superkit v0.0.0-20240701091803-e7f8e0aad3e9/go.mod h1:69g55n/HQKFBpUPcz9SnYJm8DiUQ8xFgX6yjkJiyqdo=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-chi/chi/v5 v5.1.0 h1:acVI1TYaD+hhedDJ3r54HyA6sExp3HfXq7QWEEY/xMw=
 github.com/go-chi/chi/v5 v5.1.0/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=

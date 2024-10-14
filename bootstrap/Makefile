@@ -37,7 +37,7 @@ server:
 		--misc.clean_on_exit true \
 		--screen.clear_on_rebuild true \
 		--log.main_only true
-	
+
 build:
 	@go build -o bin/app_prod cmd/app/main.go
 	@echo "compiled you application with all its assets to a single binary => bin/app_prod"
@@ -50,7 +50,6 @@ db-down:
 
 db-up:
 	@GOOSE_DRIVER=$(DB_DRIVER) GOOSE_DBSTRING=$(DB_DBSTRING) go run github.com/pressly/goose/v3/cmd/goose@latest -dir=$(MIGRATION_DIR) up
-
 
 migration:
 	@GOOSE_DRIVER=$(DB_DRIVER) GOOSE_DBSTRING=$(DB_DBSTRING) go run github.com/pressly/goose/v3/cmd/goose@latest -dir=$(MIGRATION_DIR) create $(filter-out $@,$(MAKECMDGOALS)) sql

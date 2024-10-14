@@ -1,8 +1,9 @@
 package main
 
 import (
-	"COREMOD/app"
-	"COREMOD/service/env"
+	"COREMOD/infra/router"
+
+	"github.com/tabajara-coder/common/env"
 
 	"net/http"
 
@@ -12,8 +13,8 @@ import (
 func main() {
 	chiRouter := chi.NewMux()
 
-	app.InitializeMiddleware(chiRouter)
-	app.InitializeRoutes(chiRouter)
+	router.InitializeMiddleware(chiRouter)
+	router.InitializeRoutes(chiRouter)
 
 	listenAddr := env.Get("HTTP_LISTEN_ADDR", ":8080")
 

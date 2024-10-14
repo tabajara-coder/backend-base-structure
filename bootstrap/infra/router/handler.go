@@ -3,7 +3,7 @@ package router
 import (
 	"net/http"
 
-	"github.com/tabajara-coder/backend-base-structure/core"
+	"github.com/tabajara-coder/common/core"
 )
 
 func HandleSign(core *core.Core) error {

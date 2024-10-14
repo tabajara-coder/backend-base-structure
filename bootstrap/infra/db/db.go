@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/tabajara-coder/backend-base-structure/db"
+	"github.com/tabajara-coder/common/db"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

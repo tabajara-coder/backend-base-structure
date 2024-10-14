@@ -3,7 +3,7 @@ package main
 import (
 	"COREMOD/infra/router"
 
-	"COREMOD/service/env"
+	"github.com/tabajara-coder/common/env"
 
 	"net/http"
 

@@ -1,10 +1,11 @@
 package router
 
 import (
+	"COREMOD/adapter/driving/auth"
+
 	"github.com/go-chi/chi/v5"
 	chimiddleware "github.com/go-chi/chi/v5/middleware"
-	"github.com/tabajara-coder/backend-base-structure/core"
-	"COREMOD/adapter/driving/auth"
+	"github.com/tabajara-coder/common/core"
 )
 
 func InitializeMiddleware(router *chi.Mux) {

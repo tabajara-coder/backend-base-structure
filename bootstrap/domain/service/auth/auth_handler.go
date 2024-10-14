@@ -1,9 +1,9 @@
 package auth
 
-
 import (
-	"github.com/tabajara-coder/backend-base-structure/core"
 	"COREMOD/domain/entity"
+
+	"github.com/tabajara-coder/common/core"
 )
 
 func VerifyUserSession(core *core.Core) (core.Auth, error) {

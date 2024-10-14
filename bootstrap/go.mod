@@ -6,7 +6,10 @@ replace github.com/tabajara-coder/backend-base-structure => ../
 
 require github.com/lib/pq v1.10.9
 
-require github.com/mattn/go-sqlite3 v1.14.22 // indirect
+require (
+	github.com/mattn/go-sqlite3 v1.14.22 // indirect
+	github.com/tabajara-coder/common v0.0.0-20241010232837-a4bb8b7dbe1e // indirect
+)
 
 require (
 	github.com/anthdm/superkit v0.0.0-20240701091803-e7f8e0aad3e9
